@@ -1,5 +1,7 @@
 # Getting started
 
+# For testcafe
+
 Run `npm install`
 
 Add your node_modules/*/bin to your PATH so you can use testcafe and other binaries 

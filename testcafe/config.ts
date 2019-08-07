@@ -5,9 +5,9 @@ dotenv.config();
 
 
 const config = {
-    DEPLOYMENT_URL: process.env.DEPLOYMENT_URL,
-    USERNAME: process.env.USERNAME,
-    PASSWORD: process.env.PASSWORD,
+    DEPLOYMENT_URL: process.env.TC_DEPLOYMENT_URL,
+    EMAIL: process.env.TC_EMAIL,
+    PASSWORD: process.env.TC_PASSWORD,
 }  
 
 export default config;

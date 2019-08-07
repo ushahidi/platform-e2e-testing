@@ -22,7 +22,7 @@ test('Check we can submit a login form, login, and logout', async t => {
     await t
         .click(aLoginButton)
         .typeText(Selector('input#password'), config.PASSWORD)
-        .typeText(Selector('input#email'), config.USERNAME)
+        .typeText(Selector('input#email'), config.EMAIL, {paste:true}) 
         .click(Selector('button').withText('LOG IN'))
         .expect(aLogoutButton.visible).ok();
 

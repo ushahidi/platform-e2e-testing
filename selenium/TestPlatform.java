@@ -34,55 +34,55 @@ public class TestPlatform {
 
         driver.navigate().back();
 
-        WebElement linkSurverys = driver.findElementByPartialLinkText("/surveys");
+        WebElement linkSurverys = driver.findElementByXPath("//*[@id=\"bootstrap-app\"]/ui-view/ui-view/div/main/div/div/div[2]/div/h2/a");
         linkSurverys.click();
 
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.navigate().back();
 
-        WebElement linkDataSources = driver.findElementByPartialLinkText("/datasources");
+        WebElement linkDataSources = driver.findElementByXPath("//*[@id=\"bootstrap-app\"]/ui-view/ui-view/div/main/div/div/div[3]/div/h2/a");
         linkDataSources.click();
 
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.navigate().back();
 
-        WebElement linkImport = driver.findElementByPartialLinkText("/import");
+        WebElement linkImport = driver.findElementByXPath("//*[@id=\"bootstrap-app\"]/ui-view/ui-view/div/main/div/div/div[4]/div/h2/a");
         linkImport.click();
 
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.navigate().back();
 
-        WebElement linkExport = driver.findElementByPartialLinkText("/export");
+        WebElement linkExport = driver.findElementByXPath("//*[@id=\"bootstrap-app\"]/ui-view/ui-view/div/main/div/div/div[6]/div/h2/a");
         linkExport.click();
 
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.navigate().back();
 
-        WebElement linkUsers = driver.findElementByPartialLinkText("/users");
+        WebElement linkUsers = driver.findElementByXPath("//*[@id=\"bootstrap-app\"]/ui-view/ui-view/div/main/div/div/div[7]/div/h2/a");
         linkUsers.click();
 
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.navigate().back();
 
-        WebElement linkRoles = driver.findElementByPartialLinkText("/roles");
+        WebElement linkRoles = driver.findElementByXPath("//*[@id=\"bootstrap-app\"]/ui-view/ui-view/div/main/div/div/div[8]/div/h2/a");
         linkRoles.click();
 
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.navigate().back();
 
-        WebElement linkCategories = driver.findElementByPartialLinkText("/categories");
+        WebElement linkCategories = driver.findElementByXPath("//*[@id=\"bootstrap-app\"]/ui-view/ui-view/div/main/div/div/div[9]/div/h2/a");
         linkCategories.click();
 
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.navigate().back();
 
-        WebElement linkWebhooks = driver.findElementByPartialLinkText("/webhooks");
+        WebElement linkWebhooks = driver.findElementByXPath("<a ui-sref=\"settings.webhooks\" translate=\"\" href=\"/settings/webhooks\">Webhooks</a>");
         linkWebhooks.click();
 
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.navigate().back();
 
-        WebElement linkPlans = driver.findElementByPartialLinkText("/plans");
+        WebElement linkPlans = driver.findElementByXPath("//*[@id=\"bootstrap-app\"]/ui-view/ui-view/div/main/div/div/div[11]/div/h2/a");
         linkPlans.click();
 
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);

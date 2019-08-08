@@ -24,7 +24,7 @@ public class TestPlatform {
 
 //        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         //go into settings
-        WebElement buttonSettings = driver.findElementByXPath("//a[normalize-space()='Settings']");
+        WebElement buttonSettings = (new WebDriverWait(driver, 10)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[normalize-space()='Settings']")));
         buttonSettings.click();
 
         WebElement linkGeneral = driver.findElementByXPath("//*[@id='bootstrap-app']/ui-view/ui-view/div/main/div/div/div[1]/div/h2/a");
@@ -34,8 +34,8 @@ public class TestPlatform {
 
         driver.navigate().back();
 
-        WebElement linkSurverys = driver.findElementByXPath("//*[@id=\"bootstrap-app\"]/ui-view/ui-view/div/main/div/div/div[2]/div/h2/a");
-        linkSurverys.click();
+        WebElement linkSurveys = driver.findElementByXPath("//*[@id=\"bootstrap-app\"]/ui-view/ui-view/div/main/div/div/div[2]/div/h2/a");
+        linkSurveys.click();
 
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.navigate().back();
@@ -76,7 +76,7 @@ public class TestPlatform {
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.navigate().back();
 
-        WebElement linkWebhooks = driver.findElementByXPath("<a ui-sref=\"settings.webhooks\" translate=\"\" href=\"/settings/webhooks\">Webhooks</a>");
+        WebElement linkWebhooks = driver.findElementByXPath("//*[@id=\"bootstrap-app\"]/ui-view/ui-view/div/main/div/div/div[10]/div/h2/a");
         linkWebhooks.click();
 
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);

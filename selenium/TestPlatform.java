@@ -14,15 +14,14 @@ public class TestPlatform {
         buttonLogin.click();
 
         WebElement fieldEmail = driver.findElementById ("email");
-        fieldEmail.sendKeys ("walter@ushahidi.com");
+        fieldEmail.sendKeys ("enterEmailHere");
 
         WebElement fieldPass = driver.findElementById("password");
-        fieldPass.sendKeys("t3stushahidi");
+        fieldPass.sendKeys("enterPasswordHere");
 
         WebElement buttonSubmit = driver.findElementByXPath("//*[@id=\"bootstrap-app\"]/ush-modal-container/div/div[1]/modal-content/login/form/div[2]/div/button[2]");
         buttonSubmit.click();
 
-//        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         //go into settings
         WebElement buttonSettings = (new WebDriverWait(driver, 10)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[normalize-space()='Settings']")));
         buttonSettings.click();
@@ -30,62 +29,61 @@ public class TestPlatform {
         WebElement linkGeneral = driver.findElementByXPath("//*[@id='bootstrap-app']/ui-view/ui-view/div/main/div/div/div[1]/div/h2/a");
         linkGeneral.click();
 
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-
+        Thread.sleep(2000);
         driver.navigate().back();
 
         WebElement linkSurveys = driver.findElementByXPath("//*[@id=\"bootstrap-app\"]/ui-view/ui-view/div/main/div/div/div[2]/div/h2/a");
         linkSurveys.click();
 
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        Thread.sleep(2000);
         driver.navigate().back();
 
         WebElement linkDataSources = driver.findElementByXPath("//*[@id=\"bootstrap-app\"]/ui-view/ui-view/div/main/div/div/div[3]/div/h2/a");
         linkDataSources.click();
 
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        Thread.sleep(2000);
         driver.navigate().back();
 
         WebElement linkImport = driver.findElementByXPath("//*[@id=\"bootstrap-app\"]/ui-view/ui-view/div/main/div/div/div[4]/div/h2/a");
         linkImport.click();
 
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        Thread.sleep(2000);
         driver.navigate().back();
 
         WebElement linkExport = driver.findElementByXPath("//*[@id=\"bootstrap-app\"]/ui-view/ui-view/div/main/div/div/div[6]/div/h2/a");
         linkExport.click();
 
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        Thread.sleep(2000);
         driver.navigate().back();
 
         WebElement linkUsers = driver.findElementByXPath("//*[@id=\"bootstrap-app\"]/ui-view/ui-view/div/main/div/div/div[7]/div/h2/a");
         linkUsers.click();
 
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        Thread.sleep(2000);
         driver.navigate().back();
 
         WebElement linkRoles = driver.findElementByXPath("//*[@id=\"bootstrap-app\"]/ui-view/ui-view/div/main/div/div/div[8]/div/h2/a");
         linkRoles.click();
 
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        Thread.sleep(2000);
         driver.navigate().back();
 
         WebElement linkCategories = driver.findElementByXPath("//*[@id=\"bootstrap-app\"]/ui-view/ui-view/div/main/div/div/div[9]/div/h2/a");
         linkCategories.click();
 
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        Thread.sleep(2000);
         driver.navigate().back();
 
         WebElement linkWebhooks = driver.findElementByXPath("//*[@id=\"bootstrap-app\"]/ui-view/ui-view/div/main/div/div/div[10]/div/h2/a");
         linkWebhooks.click();
 
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        Thread.sleep(2000);
         driver.navigate().back();
 
         WebElement linkPlans = driver.findElementByXPath("//*[@id=\"bootstrap-app\"]/ui-view/ui-view/div/main/div/div/div[11]/div/h2/a");
         linkPlans.click();
 
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        Thread.sleep(2000);
         driver.navigate().back();
 
     }

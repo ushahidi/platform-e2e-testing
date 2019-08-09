@@ -7,6 +7,7 @@ fixture `Testing a deployment login and logout flow`// declare the fixture
 
 const aLoginButton = Selector('a').withText('Log in');
 const aLogoutButton = Selector('a').withAttribute('ng-click', 'logout()');
+const settingsButton = Selector('a').withText('Settings');
 
 // then create a test and place your code there
 test('Check there is an email and password field after clicking the login button', async t => {
@@ -25,6 +26,20 @@ test('Check we can submit a login form, login, and logout', async t => {
         .typeText(Selector('input#email'), config.EMAIL, {paste:true}) 
         .click(Selector('button').withText('LOG IN'))
         .expect(aLogoutButton.visible).ok();
+
+//go into settings and verify all settings are present
+    await t
+        .click(settingsButton)
+        .expect(Selector('a#settings.general').exists).ok()
+        .expect(Selector('button').withText('Surveys').exists).ok()
+        .expect(Selector('button').withText('Data Sources').exists).ok()
+        .expect(Selector('button').withText('Import').exists).ok()
+        .expect(Selector('button').withText('Export data').exists).ok()
+        .expect(Selector('button').withText('Users').exists).ok()
+        .expect(Selector('button').withText('Roles').exists).ok()
+        .expect(Selector('button').withText('Categories').exists).ok()
+        .expect(Selector('button').withText('Webhooks').exists).ok()
+        .expect(Selector('button').withText('Plans').exists).ok();
 
     await t.click(aLogoutButton)
         .expect(Selector('a').withText('Log in')).ok();

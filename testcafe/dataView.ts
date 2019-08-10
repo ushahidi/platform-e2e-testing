@@ -30,16 +30,16 @@ test('Check we can submit a login form, login, and logout', async t => {
 //go into settings and verify all settings are present
     await t
         .click(settingsButton)
-        .expect(Selector('a#settings.general').exists).ok()
-        .expect(Selector('button').withText('Surveys').exists).ok()
-        .expect(Selector('button').withText('Data Sources').exists).ok()
-        .expect(Selector('button').withText('Import').exists).ok()
-        .expect(Selector('button').withText('Export data').exists).ok()
-        .expect(Selector('button').withText('Users').exists).ok()
-        .expect(Selector('button').withText('Roles').exists).ok()
-        .expect(Selector('button').withText('Categories').exists).ok()
-        .expect(Selector('button').withText('Webhooks').exists).ok()
-        .expect(Selector('button').withText('Plans').exists).ok();
+        .expect(Selector('a').withText('General').exists).ok()
+        .expect(Selector('a').withText('Surveys').exists).ok()
+        .expect(Selector('a').withText('Data Sources').exists).ok()
+        .expect(Selector('a').withText('Import').exists).ok()
+        .expect(Selector('a').withText('Export data').exists).ok()
+        .expect(Selector('a').withText('Users').exists).ok()
+        .expect(Selector('a').withText('Roles').exists).ok()
+        .expect(Selector('a').withText('Categories').exists).ok()
+        .expect(Selector('a').withText('Webhooks').exists).ok()
+        .expect(Selector('a').withText('Plans').exists).ok();
 
     await t.click(aLogoutButton)
         .expect(Selector('a').withText('Log in')).ok();

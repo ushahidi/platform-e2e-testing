@@ -9,6 +9,10 @@ public class TestPlatform {
         ChromeDriver driver = new ChromeDriver();
         driver.get("https://test-deployment.steve-buscemi.ush.zone/views/map");
 
+        //maximize browser window. window wasn't maximized and log-in overlay wasn't coming up
+        driver.manage().window().maximize();
+
+	    //login
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         WebElement buttonLogin = driver.findElementByXPath("//a[normalize-space()='Log in']");
         buttonLogin.click();
@@ -21,6 +25,17 @@ public class TestPlatform {
 
         WebElement buttonSubmit = driver.findElementByXPath("//*[@id=\"bootstrap-app\"]/ush-modal-container/div/div[1]/modal-content/login/form/div[2]/div/button[2]");
         buttonSubmit.click();
+
+
+        //go into dataview
+        WebElement buttonData = driver.findElementByXPath("//a[normalize-space()='Data']");
+        Actions actions = new Actions(driver);
+        actions.moveToElement(buttonData).click().perform();
+
+
+        //verify filters drop-down exists
+        driver.findElements(By.xpath("//*[@id=\"bootstrap-app\"]/ui-view/ui-view/post-view-data/main/div/post-toolbar/div/form/div[2]/a/sort-and-filter-counter/span/span[2]"));
+
 
         //go into settings
         WebElement buttonSettings = (new WebDriverWait(driver, 10)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[normalize-space()='Settings']")));

@@ -32,8 +32,8 @@ Note that the cypress test GUI, when running, opens the browser(viewport) with d
   "viewportWidth": 1000,
   "viewportHeight": 660
 }`
-This minimised browser windows causes some fields to not be visible and you'll have to use force `{force: true}` for clicks to be possible. To get around this, edit your viewports Height and Width in your `cypress.json` file as:
+This minimised browser windows causes some fields to not be visible and you'll have to use force `{force: true}` for clicks to be possible. To get around this, edit your viewports Height and Width in your `cypress.json` file to match your viewing device as:
 `{
-  "viewportWidth": 1200,
-  "viewportHeight": 860
+  "viewportWidth": 1280,
+  "viewportHeight": 960
 }`

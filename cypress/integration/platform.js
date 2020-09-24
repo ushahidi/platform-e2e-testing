@@ -9,6 +9,19 @@ describe('Platform Test', () => {
 	  cy.get('.button-alpha').contains('Log in').click()
 	})
 
+it('Checks Data View',()=>{
+	cy.wait(3000)//this wait can be done away with if browser(viewport) window is maximized.																																																																																
+	cy.contains('Data').click({force: true})
+	cy.get('.hide-until-medium > .searchbar > .searchbar-options > .searchbar-options-filter > sort-and-filter-counter > .button-label-d > [translate=""]').contains('Sort & filter')
+	   .click({force: true})
+
+	//this line should check that Save Search button is not present and pass if not present. The Save Search button on filters is 
+	//usually present when filters hve been adjusted or changed. Meaning if the Save Search button is not present, then no filters have been 
+	//applied thus they are at default. This test basically checks that filters are at default. It however isn't passing currently and needs fixing.
+	cy.get ('.hide-until-medium > .searchbar > .dropdown-menu > .dropdown-menu-body > .filter-buttons > .ng-pristine > [ng-show="showSaveSavedSearchButton()"] > .button')
+		.should('not.exist')
+	})
+
 it('Verifies Settings',()=>{
 	  cy.wait(3000) //wait for link to be visible
 	  cy.contains('Settings').click({force: true})

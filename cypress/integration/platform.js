@@ -71,4 +71,27 @@ it('Verifies Settings',()=>{
 	  cy.go('back')
 
 	})
+
+it ('Creates a Member User',()=>{
+	cy.contains('Settings').click({force: true})
+
+	cy.wait(3000)
+
+	cy.contains('Users').click()
+
+	cy.get('.fab > .button > .iconic > use').click()
+
+	cy.get('input[name="full_name"]').type(Cypress.env('ush_user_name'))
+	cy.get('input[name="email"]').type(Cypress.env('ush_user_email'))
+	cy.get('input[name="password"]').type(Cypress.env('ush_user_pwd'))
+
+	//expand list of roles
+	cy.get('.dropdown-trigger > .iconic > use').click()
+	//select Member role
+	cy.contains('Member').click()
+
+	cy.get('.button-alpha').click()
+})
+
+
 })

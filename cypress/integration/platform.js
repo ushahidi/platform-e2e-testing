@@ -93,5 +93,26 @@ it ('Creates a Member User',()=>{
 	cy.get('.button-alpha').click()
 })
 
+it ('Sorts Users', ()=>{
+	cy.contains('Settings').click({force: true})
+
+	cy.contains('Users').click()
+
+	//expand filters drop-down
+	cy.get('#toggleUserSearchFilters').click()
+
+	//select descending order
+	cy.get(':nth-child(1) > :nth-child(3) > label').click()
+
+	//select admin role - but this is commented out because when enabled, filters only picks admin and not admin together with member
+	// cy.get('[model="filters.role"] > :nth-child(2) > label').click()
+
+	//select Member role
+	cy.get('[model="filters.role"] > :nth-child(3) > label').click()
+
+
+	cy.get('.filter-actions > .button-alpha').click()
+
+})
 
 })

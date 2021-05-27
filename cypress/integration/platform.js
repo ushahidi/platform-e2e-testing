@@ -103,6 +103,20 @@ it ('Creates a Member User',()=>{
 	cy.get('.button-alpha').click()
 })
 
+it ('Deletes a User', ()=>{
+	cy.contains('Settings').click({force: true})
+
+	cy.contains('Users').click()
+	//the number 67 is auto-assigned when a new user is created and auto-increments with every creation. current count is 67.
+	cy.get('#user-67 > div.listing-item-select > input[type=checkbox]').click() 
+
+	//click on delete button that pops up when user has been selected
+	cy.get('.button-destructive').click()
+
+	//click on delete on confirmation modal to complete deletion
+	cy.get('.button-destructive').eq(1).click()
+})
+
 it ('Sorts Users', ()=>{
 	cy.contains('Settings').click({force: true})
 

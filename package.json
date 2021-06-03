@@ -1,0 +1,23 @@
+{
+  "name": "platform-e2e-testing",
+  "version": "1.0.0",
+  "description": "# For testcafe",
+  "main": "index.js",
+  "dependencies": {
+    "cypress": "^7.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ushahidi/platform-e2e-testing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ushahidi/platform-e2e-testing/issues"
+  },
+  "homepage": "https://github.com/ushahidi/platform-e2e-testing#readme"
+}

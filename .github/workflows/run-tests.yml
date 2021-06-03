@@ -27,6 +27,7 @@ jobs:
       uses: cypress-io/github-action@v2
       with:
         browser: firefox
+        record: true
         # headless: true (would this even work?)
       env:
           CYPRESS_ush_admin_email: "${{secrets.ush_admin_email}}"

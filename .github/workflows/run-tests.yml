@@ -28,9 +28,6 @@ jobs:
       with:
         browser: firefox
         # headless: true (would this even work?)
-        spec: |
-          **/*.js
-        working-directory: cypress
       env:
           ush_admin_email: "${{secrets.ush_admin_email}}"
           ush_admin_pwd: "${{secrets.ush_admin_pwd}}"

@@ -7,29 +7,41 @@ on:
 # env:
 #   TARGET_URL: "https://test-deployment.steve-buscemi.ush.zone"
 
-concurrency: single-deployment
-
 jobs:
   test:
     runs-on: ubuntu-latest
     container: cypress/browsers:node14.16.0-chrome89-ff86
-    concurrency: single-test-job
     timeout-minutes: 30
 
-    strategy:
-      matrix:
-        browser:
-          - chrome
-          - firefox
+    # concurrency control still in beta for github actions
+    # hence we implement two testing steps
+    # strategy:
+    #   matrix:
+    #     browser:
+    #       - chrome
+    #       - firefox
 
     steps:
     - uses: actions/checkout@v2
 
-    - name: Cypress run
+    - name: Cypress run (chrome)
       uses: cypress-io/github-action@v2
 
       with:
-        browser: "${{matrix.browser}}"
+        browser: chrome
+        record: true
+        # headless: true (would this even work?)
+      env:
+          CYPRESS_ush_admin_email: "${{secrets.ush_admin_email}}"
+          CYPRESS_ush_admin_pwd: "${{secrets.ush_admin_pwd}}"
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Cypress run (firefox)
+      uses: cypress-io/github-action@v2
+
+      with:
+        browser: firefox
         record: true
         # headless: true (would this even work?)
       env:

@@ -11,15 +11,16 @@ jobs:
   test:
     runs-on: ubuntu-latest
     container: cypress/browsers:node14.16.0-chrome89-ff86
+    continue-on-error: true
     timeout-minutes: 30
 
-    # concurrency control still in beta for github actions
-    # hence we implement two testing steps
-    # strategy:
-    #   matrix:
-    #     browser:
-    #       - chrome
-    #       - firefox
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        browser:
+          - chrome
+          - firefox
 
     steps:
     - uses: actions/checkout@v2
@@ -28,20 +29,7 @@ jobs:
       uses: cypress-io/github-action@v2
 
       with:
-        browser: chrome
-        record: true
-        # headless: true (would this even work?)
-      env:
-          CYPRESS_ush_admin_email: "${{secrets.ush_admin_email}}"
-          CYPRESS_ush_admin_pwd: "${{secrets.ush_admin_pwd}}"
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    
-    - name: Cypress run (firefox)
-      uses: cypress-io/github-action@v2
-
-      with:
-        browser: firefox
+        browser: "${{matrix.browser}}"
         record: true
         # headless: true (would this even work?)
       env:

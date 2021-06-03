@@ -12,7 +12,7 @@ concurrency: single-deployment
 jobs:
   test:
     runs-on: ubuntu-latest
-    container: node14.16.0-chrome89-ff86
+    container: cypress/browsers:node14.16.0-chrome89-ff86
     concurrency: single-test-job
     timeout-minutes: 30
 

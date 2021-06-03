@@ -1,0 +1,34 @@
+name: Tests
+
+on:
+- push
+- pull_request
+
+# env:
+#   TARGET_URL: "https://test-deployment.steve-buscemi.ush.zone"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    # TBD: test different browsers with the same job
+    # strategy:
+    #   matrix:
+    #     browser:
+    #       - chrome
+    #       - firefox
+    #       - edge
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Cypress run
+      uses: cypress-io/github-action@v2
+      with:
+        browser: firefox
+        # headless: true (would this even work?)
+        spec: cypress/integration/platform.js
+      env:
+          ush_admin_email: "${{secrets.ush_admin_email}}"
+          ush_admin_pwd: "${{secrets.ush_admin_pwd}}"

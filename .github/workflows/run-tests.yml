@@ -1,0 +1,38 @@
+name: Tests
+
+on:
+- push
+- pull_request
+
+# env:
+#   TARGET_URL: "https://test-deployment.steve-buscemi.ush.zone"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container: cypress/browsers:node14.16.0-chrome89-ff86
+    timeout-minutes: 30
+
+    strategy:
+      fail-fast: false
+      # limit to 1 in parallel because we are running against the same platform deployment
+      max-parallel: 1
+      matrix:
+        browser:
+          - chrome
+          # - firefox   # browser not found on the image?
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Cypress run
+      uses: cypress-io/github-action@v2
+
+      with:
+        browser: "${{matrix.browser}}"
+        record: true
+      env:
+          CYPRESS_ush_admin_email: "${{secrets.ush_admin_email}}"
+          CYPRESS_ush_admin_pwd: "${{secrets.ush_admin_pwd}}"
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

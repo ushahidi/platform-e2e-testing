@@ -263,4 +263,18 @@ it ('Opens Survey Creation Page',() =>{
 
 })
 
+//Signing Up user
+it ('Signs User up', () => {
+	cy.visit('https://test-deployment.steve-buscemi.ush.zone/views/data')
+
+	cy.contains('Sign up').click({force: true})
+
+	cy.get('[placeholder="Display Name"]').type('Automated User')
+	cy.get('input[id=email]').type(Cypress.env('ush_admin_email'))
+	cy.get('input[id=password]').type(Cypress.env('ush_admin_pwd'))
+
+	cy.wait(2000)
+	cy.get('[type="submit"]').eq(1).click({force: true})
+	})
+
 })

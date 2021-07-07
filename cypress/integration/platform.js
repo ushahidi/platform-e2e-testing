@@ -277,4 +277,23 @@ it ('Signs User up', () => {
 	cy.get('[type="submit"]').eq(1).click({force: true})
 	})
 
+//Creating a Category
+//Is not a child category, default language, default permissions and visibility
+it ('Navigates to Categories', () => {
+	   cy.wait(4000) //wait for link to be visible
+	   cy.contains('Settings').click({force: true})
+
+	   cy.contains('Categories').click({force: true})
+
+	   //open category creation page
+	   cy.get('.button.button-alpha.button-fab').click()
+	})
+
+	it('Creates Category',() => {
+		cy.get('#category-name').type('Automated Category')
+		cy.get('#category-description').type('Automated Category Description')
+
+		cy.contains('Save').click()
+	})
+
 })

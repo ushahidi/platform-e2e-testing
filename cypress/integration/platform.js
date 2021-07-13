@@ -212,7 +212,7 @@ it ('Opens Survey Creation Page',() =>{
 	cy.get('#field-name').type('Automated Select Field')
 	cy.contains('Add & close').click()
 
-	Radio Field
+	// Radio Field
 	cy.contains('Add field').click()
 	cy.contains('Radio Button(s)').click()
 	cy.get('#field-name').type('Automated Radio Buttons Field')

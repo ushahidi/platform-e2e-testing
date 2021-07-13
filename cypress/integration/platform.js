@@ -52,7 +52,7 @@ it('Verifies Settings',()=>{
 	  cy.wait(3000)
 	  cy.go('back')
 
-	  cy.contains('Export and tag data').click()
+	  cy.contains('Export data').click()
 	  cy.wait(3000)
 	  cy.go('back')
 

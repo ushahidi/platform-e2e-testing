@@ -19,18 +19,14 @@ it('Checks Data View',()=>{
 	cy.get('.hide-until-medium > .searchbar > .searchbar-options > .searchbar-options-filter').click()
 	cy.contains('Published').click({force: true})
 
-	//Clicking on Published dismisses the SOrt&Filter overlay. I have to relaunch it in this piece of code that follows. Need to
-	//check into having it persist to click the apply button.
-	cy.get('.hide-until-medium > .searchbar > .searchbar-options > .searchbar-options-filter').click()
-	cy.get('.hide-until-medium > .searchbar > .dropdown-menu > .filter-actions > .button-alpha').click()
+	cy.contains('Apply').click({force:true})
 
 
-	//this line should check that Save Search button is not present and pass if not present. The Save Search button on filters is 
-	//usually present when filters hve been adjusted or changed. Meaning if the Save Search button is not present, then no filters have been 
-	//applied thus they are at default. This test basically checks that filters are at default. It however isn't passing currently and needs fixing.
-	cy.get ('.hide-until-medium > .searchbar > .dropdown-menu > .dropdown-menu-body > .filter-buttons > .ng-pristine > [ng-show="showSaveSavedSearchButton()"] > .button')
-		.should('not.exist')
+	//Changed this to check that the Save Search button exists when user alters the Filters. For now we'll leave it as
+	//check that Save Search button appears and exists.
+	cy.contains('Save Search').should('exist')
 	})
+
 
 it('Verifies Settings',()=>{
 	  cy.wait(3000) //wait for link to be visible

@@ -285,7 +285,7 @@ it ('Navigates to Categories', () => {
 	   cy.get('.button.button-alpha.button-fab').click()
 	})
 
-	it('Creates Category',() => {
+it('Creates Category',() => {
 		cy.get('#category-name').type('Automated Category')
 		cy.get('#category-description').type('Automated Category Description')
 

@@ -265,9 +265,9 @@ it ('Signs User up', () => {
 
 	cy.contains('Sign up').click({force: true})
 
-	cy.get('[placeholder="Display Name"]').type('Automated User')
-	cy.get('input[id=email]').type(Cypress.env('ush_admin_email'))
-	cy.get('input[id=password]').type(Cypress.env('ush_admin_pwd'))
+	cy.get('[placeholder="Display Name"]').type('ush_user_name')
+	cy.get('input[id=email]').type(Cypress.env('ush_user_email'))
+	cy.get('input[id=password]').type(Cypress.env('ush_user_pwd'))
 
 	cy.wait(2000)
 	cy.get('[type="submit"]').eq(1).click({force: true})

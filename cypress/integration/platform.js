@@ -131,7 +131,7 @@ it ('Sorts Users', ()=>{
 	cy.get('[model="filters.role"] > :nth-child(3) > label').click()
 
 
-	cy.get('.filter-actions > .button-alpha').click()
+	cy.get('.filter-actions > .button-alpha').click([force: true])
 
 })
 

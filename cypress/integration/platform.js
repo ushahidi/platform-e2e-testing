@@ -282,6 +282,7 @@ it ('Navigates to Categories', () => {
 	   cy.contains('Categories').click({force: true})
 
 	   //open category creation page
+	   cy.wait(4000)
 	   cy.get('.button.button-alpha.button-fab').click({force: true})
 	})
 

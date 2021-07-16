@@ -265,7 +265,7 @@ it ('Signs User up', () => {
 
 	cy.contains('Sign up').click({force: true})
 
-	cy.get('[placeholder="Display Name"]').type('ush_user_name')
+	cy.get('[placeholder="Display Name"]').type(Cypress.env('ush_user_name'))
 	cy.get('input[id=email]').type(Cypress.env('ush_user_email'))
 	cy.get('input[id=password]').type(Cypress.env('ush_user_pwd'))
 
@@ -282,7 +282,7 @@ it ('Navigates to Categories', () => {
 	   cy.contains('Categories').click({force: true})
 
 	   //open category creation page
-	   cy.get('.button.button-alpha.button-fab').click()
+	   cy.get('.button.button-alpha.button-fab').click({force: true})
 	})
 
 it('Creates Category',() => {

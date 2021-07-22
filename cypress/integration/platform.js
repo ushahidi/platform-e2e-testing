@@ -104,7 +104,7 @@ it ('Deletes a User', ()=>{
 
 	cy.contains('Users').click()
 	//the number 67 is auto-assigned when a new user is created and auto-increments with every creation. current count is 67.
-	cy.get('#user-3 > div.listing-item-select > input[type=checkbox]').click({force: true}) 
+	cy.get('#user-83 > div.listing-item-select > input[type=checkbox]').click({force: true}) 
 
 	//click on delete button that pops up when user has been selected
 	cy.get('.button-destructive').click()
@@ -260,18 +260,18 @@ it ('Opens Survey Creation Page',() =>{
 })
 
 //Signing Up user
-// it ('Signs User up', () => {
-// 	cy.visit('https://test-deployment.steve-buscemi.ush.zone/views/data')
+it ('Signs User up', () => {
+	cy.visit('https://test-deployment.steve-buscemi.ush.zone/views/data')
 
-// 	cy.contains('Sign up').click({force: true})
+	cy.contains('Sign up').click({force: true})
 
-// 	cy.get('[placeholder="Display Name"]').type(Cypress.env('ush_user_name'))
-// 	cy.get('input[id=email]').type(Cypress.env('ush_user_email'))
-// 	cy.get('input[id=password]').type(Cypress.env('ush_user_pwd'))
+	cy.get('[placeholder="Display Name"]').type(Cypress.env('ush_user_name'))
+	cy.get('input[id=email]').type(Cypress.env('ush_user_email'))
+	cy.get('input[id=password]').type(Cypress.env('ush_user_pwd'))
 
-// 	cy.wait(2000)
-// 	cy.get('[type="submit"]').eq(1).click({force: true})
-// 	})
+	cy.wait(2000)
+	cy.get('[type="submit"]').eq(1).click({force: true})
+	})
 
 //Creating a Category
 //Is not a child category, default language, default permissions and visibility

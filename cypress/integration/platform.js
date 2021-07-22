@@ -259,20 +259,6 @@ it ('Opens Survey Creation Page',() =>{
 
 })
 
-//Signing Up user
-it ('Signs User up', () => {
-	cy.visit('https://test-deployment.steve-buscemi.ush.zone/views/data')
-
-	cy.contains('Sign up').click({force: true})
-
-	cy.get('[placeholder="Display Name"]').type(Cypress.env('ush_user_name'))
-	cy.get('input[id=email]').type(Cypress.env('ush_user_email'))
-	cy.get('input[id=password]').type(Cypress.env('ush_user_pwd'))
-
-	cy.wait(2000)
-	cy.get('[type="submit"]').eq(1).click({force: true})
-	})
-
 //Creating a Category
 //Is not a child category, default language, default permissions and visibility
 it ('Navigates to Categories', () => {
@@ -291,6 +277,20 @@ it('Creates Category',() => {
 		cy.get('#category-description').type('Automated Category Description')
 
 		cy.contains('Save').click()
+	})
+
+//Signing Up user
+it ('Signs User up', () => {
+	cy.visit('https://test-deployment.steve-buscemi.ush.zone/views/data')
+
+	cy.contains('Sign up').click({force: true})
+
+	cy.get('[placeholder="Display Name"]').type(Cypress.env('ush_user_name'))
+	cy.get('input[id=email]').type(Cypress.env('ush_user_email'))
+	cy.get('input[id=password]').type(Cypress.env('ush_user_pwd'))
+
+	cy.wait(2000)
+	cy.get('[type="submit"]').eq(1).click({force: true})
 	})
 
 })

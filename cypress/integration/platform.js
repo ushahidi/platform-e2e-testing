@@ -254,6 +254,30 @@ it ('Opens Survey Creation Page',() =>{
 	cy.contains('Add & close').click()
 
 
+	//Tasks
+	//opens tasks creation modal
+	cy.contains('Add task').click()
+
+	//enters values in Tasks Name and Description fields
+	cy.get('[placeholder="Name this task..."]').type('Automated Task')
+	cy.get('[placeholder="Describe this task..."]').type('Automated Task Description')
+
+	cy.contains('Add & close').click()
+
+
+	//create some task fields
+	//short text field
+	cy.get('#section-build-interim_id_3 > .listing > .listing-item > .listing-item-primary > .listing-item-title > .button').click()
+	cy.contains('Short text').click()
+	cy.get('#field-name').type('Automated Short Text Field')
+	cy.contains('Add & close').click()
+
+	//long text field
+	cy.get('#section-build-interim_id_3 > .listing > .listing-item > .listing-item-primary > .listing-item-title > .button').click()
+	cy.contains('Long text').click()
+	cy.get('#field-name').type('Automated Long Text Field')
+	cy.contains('Add & close').click()
+
 	//click Save to save survey and complete survey creation process
 	cy.contains('Save').click()
 

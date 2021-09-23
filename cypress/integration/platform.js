@@ -16,7 +16,7 @@ it('Checks Data View',()=>{
 	   .click({force: true})
 
 	//launch sort & filter drop-down and sort posts to show Under Review only
-	cy.get('.hide-until-medium > .searchbar > .searchbar-options > .searchbar-options-filter').click()
+	cy.get('.hide-until-medium > .searchbar > .searchbar-options > .searchbar-options-filter').click({force: true})
 	cy.contains('Published').click({force: true})
 
 	cy.contains('Apply').click({force:true})
@@ -256,7 +256,7 @@ it ('Opens Survey Creation Page',() =>{
 
 	//Tasks
 	//opens tasks creation modal
-	cy.contains('Add task').click()
+	cy.contains('Add task').click({force: true})
 
 	//enters values in Tasks Name and Description fields
 	cy.get('[placeholder="Name this task..."]').type('Automated Task')

@@ -103,8 +103,8 @@ it ('Deletes a User', ()=>{
 	cy.contains('Settings').click({force: true})
 
 	cy.contains('Users').click()
-	//the number 67 is auto-assigned when a new user is created and auto-increments with every creation. current count is 67.
-	cy.get('#user-86 > div.listing-item-select > input[type=checkbox]').click({force: true}) 
+	cy.wait(3000)
+	cy.contains('Automated User').click()
 
 	//click on delete button that pops up when user has been selected
 	cy.get('.button-destructive').click()

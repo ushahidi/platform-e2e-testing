@@ -8,8 +8,28 @@ describe('Platform Test', () => {
 	  cy.get('input[id=password]').type(Cypress.env('ush_admin_pwd'))
 	  cy.get('.button-alpha').contains('Log in').click()
 	})
+})
+describe('Data Veiw', ()=>{
+it('Checks Data View',()=>{
+	cy.wait(3000)//this wait can be done away with if browser(viewport) window is maximized.																																																																																
+	cy.contains('Data').click({force: true})
+	cy.get('.hide-until-medium > .searchbar > .searchbar-options > .searchbar-options-filter > sort-and-filter-counter > .button-label-d > [translate=""]').contains('Sort & filter')
+	   .click({force: true})
+
+	//launch sort & filter drop-down and sort posts to show Under Review only
+	cy.get('.hide-until-medium > .searchbar > .searchbar-options > .searchbar-options-filter').click({force: true})
+	cy.contains('Published').click({force: true})
+
+	cy.contains('Apply').click({force:true})
 
 
+	//Changed this to check that the Save Search button exists when user alters the Filters. For now we'll leave it as
+	//check that Save Search button appears and exists.
+	cy.contains('Save Search').should('exist')
+	})
+
+})
+describe ('Settings', ()=>{
 it('Verifies Settings',()=>{
 	  cy.wait(3000) //wait for link to be visible
 	  cy.contains('Settings').click({force: true})
@@ -59,7 +79,8 @@ it('Verifies Settings',()=>{
 	  cy.go('back')
 
 	})
-
+})
+describe('Users', ()=>{
 it ('Creates a Member User',()=>{
 	cy.contains('Settings').click({force: true})
 
@@ -116,8 +137,9 @@ it ('Sorts Users', ()=>{
 	cy.get('.filter-actions > .button-alpha').click({force: true})
 
 })
+})
 
-
+describe ('Surveys', ()=>{
 //Survey creation
 it ('Opens Survey Creation Page',() =>{
 	cy.wait(3000)
@@ -264,7 +286,9 @@ it ('Opens Survey Creation Page',() =>{
 	cy.contains('Save').click()
 
 })
+})
 
+describe('Categories', ()=>{
 //Creating a Category
 //Is not a child category, default language, default permissions and visibility
 it ('Navigates to Categories', () => {
@@ -277,7 +301,8 @@ it ('Navigates to Categories', () => {
 	   cy.wait(4000)
 	   cy.get('.button.button-alpha.button-fab').click({force: true})
 	})
-
+})
+describe('Categories', ()=>{
 it('Creates Category',() => {
 		cy.get('#category-name').type('Automated Category')
 		cy.get('#category-description').type('Automated Category Description')

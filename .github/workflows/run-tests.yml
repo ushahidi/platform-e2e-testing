@@ -31,6 +31,10 @@ jobs:
       with:
         browser: "${{matrix.browser}}"
         record: true
+        spec: |
+          cypress/integration/platform.spec.js
+          cypress/integration/data_view.spec.js
+        
       env:
           CYPRESS_ush_admin_email: "${{secrets.ush_admin_email}}"
           CYPRESS_ush_admin_pwd: "${{secrets.ush_admin_pwd}}"

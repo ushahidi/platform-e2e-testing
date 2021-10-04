@@ -1,3 +1,5 @@
+import './platform.spec.js'
+
 describe('Data Veiw', ()=>{
 it('Checks Data View',()=>{
 	cy.wait(3000)//this wait can be done away with if browser(viewport) window is maximized.																																																																																

@@ -31,8 +31,8 @@ jobs:
       with:
         browser: "${{matrix.browser}}"
         record: true
-        spec: |
-          cypress/integration/
+        build: npm run build
+        start: npm start
         
       env:
           CYPRESS_ush_admin_email: "${{secrets.ush_admin_email}}"

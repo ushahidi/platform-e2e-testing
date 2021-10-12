@@ -33,7 +33,6 @@ jobs:
         install-command: npm install
         record: true
         build: npm run build
-        start: npm start
         
       env:
           CYPRESS_ush_admin_email: "${{secrets.ush_admin_email}}"

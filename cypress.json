@@ -1,8 +1,7 @@
 {
 "projectId": "hy6ki2",
 "testFiles":[
-	"platform.spec.js",
-	"leads/data_view.spec.js"
+		"**/*.feature"
 ]
 }
 

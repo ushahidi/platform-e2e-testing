@@ -1,13 +1,4 @@
 describe('Platform Test', () => {
-	it('Opens Platform and logs in.', () => {
-	  cy.visit('https://test-deployment.steve-buscemi.ush.zone/views/data')
-
-	  cy.contains('Log in').click({force: true})
-	  cy.get('input[id=email]').type(Cypress.env('ush_admin_email'))
-
-	  cy.get('input[id=password]').type(Cypress.env('ush_admin_pwd'))
-	  cy.get('.button-alpha').contains('Log in').click()
-	})
 })
 
 describe ('Settings', ()=>{

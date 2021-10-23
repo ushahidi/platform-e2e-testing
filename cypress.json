@@ -2,6 +2,9 @@
 "projectId": "hy6ki2",
 "testFiles":[
 		"**/*.feature"
-]
+],
+"viewportWidth": 1280,
+"viewportHeight": 960
+
 }
 

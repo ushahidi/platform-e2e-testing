@@ -4,7 +4,8 @@
 		"**/*.feature"
 ],
 "viewportWidth": 1280,
-"viewportHeight": 960
+"viewportHeight": 960,
+"videoUploadsOnPasses":false
 
 }
 

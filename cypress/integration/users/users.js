@@ -1,6 +1,17 @@
 import {Given, And, Then, When} from "cypress-cucumber-preprocessor/steps"
 
+Given ('I can add a User', ()=>{
+	cy.visit('https://test-deployment.steve-buscemi.ush.zone/views/data')
 
+	cy.contains('Sign up').click({force: true})
+
+	cy.get('[placeholder="Display Name"]').type(Cypress.env('ush_user_name'))
+	cy.get('input[id=email]').type(Cypress.env('ush_user_email'))
+	cy.get('input[id=password]').type(Cypress.env('ush_user_pwd'))
+
+	cy.wait(2000)
+	cy.get('[type="submit"]').eq(1).click({force: true})
+})
 When ('I navigate to Users page', ()=>{
 	cy.contains('Settings',{timeout: 5000}).should('be.visible').click()
 

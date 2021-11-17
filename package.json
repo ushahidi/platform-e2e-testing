@@ -1,23 +1,18 @@
 {
-  "name": "platform-e2e-testing",
+  "name": "automated-tests",
   "version": "1.0.0",
-  "description": "# For testcafe",
+  "description": "",
   "main": "index.js",
-  "dependencies": {
-    "cypress": "^7.4.0"
-  },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ushahidi/platform-e2e-testing.git"
+    "cy:open": "cypress open"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ushahidi/platform-e2e-testing/issues"
+  "devDependencies": {
+    "cypress": "^7.7.0",
+    "cypress-cucumber-preprocessor": "^4.3.0"
   },
-  "homepage": "https://github.com/ushahidi/platform-e2e-testing#readme"
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  }
 }

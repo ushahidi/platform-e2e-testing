@@ -1,7 +1,11 @@
 {
-  "projectId": "hy6ki2",
-  "viewportWidth": 1280,
-  "viewportHeight": 960 
+"projectId": "hy6ki2",
+"testFiles":[
+		"**/*.feature"
+],
+"viewportWidth": 1280,
+"viewportHeight": 960,
+"videoUploadOnPasses":false
 
 }
 

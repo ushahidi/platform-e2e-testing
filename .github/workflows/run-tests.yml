@@ -16,8 +16,9 @@ jobs:
     strategy:
       fail-fast: false
       # limit to 1 in parallel because we are running against the same platform deployment
-      max-parallel: 1
+      # max-parallel: 1
       matrix:
+        containers: [1, 2, 3]
         browser:
           - chrome
           # - firefox   # browser not found on the image?
@@ -30,7 +31,11 @@ jobs:
 
       with:
         browser: "${{matrix.browser}}"
+        install-command: npm install
         record: true
+        parallel: true
+        start: npm start
+        
       env:
           CYPRESS_ush_admin_email: "${{secrets.ush_admin_email}}"
           CYPRESS_ush_admin_pwd: "${{secrets.ush_admin_pwd}}"

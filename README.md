@@ -1,28 +1,37 @@
 # Getting started
+To run the cypress tests, you'll need to install cypress and cucumber. The tests use a BDD approach following a gherkin syntax to direct or dictate how the tests run.
 
 # For Cypress
 Run `npm install` in your directory to install all dependencies.
 
+To install cypress, navigate to your project folder, then run:
+`npm install cypress --save-dev`
+
+More information on installing cypress: https://docs.cypress.io/guides/getting-started/installing-cypress#npm-install
+
+# For Cucumber
 Installing Cucumber
 You'll need to install cucumber to be able to run the feature files. Install cucumber by running
 `npm install --save-dev cypress-cucumber-preprocessor`
 For more information on cucumber: 
 https://github.com/TheBrainFamily/cypress-cucumber-preprocessor
 
-Once cucumber is installed, add it to your plugins. Go to your index.js file in the location `cypress/plugins/index.js` and add the following code
-
+Once cucumber is installed, add it to your plugins. Go to your index.js file in the location `cypress/plugins/index.js` and add the following code:
+```
 const cucumber = require('cypress-cucumber-preprocessor').default
 
 module.exports = (on, config) => {
   on('file:preprocessor', cucumber())
 }
+```
 
-Add support for feature files to your Cypress configuration which is the file cypress.json
+Add support for feature files to your Cypress configuration which is the file `cypress.json`
 Add the code
-`{
+```
+{
 "testFiles": "**/*.feature"
-}`
-
+}
+```
 Create the file `cypress.env.json` in your parent directory. This will have your login credentials that will then be refered to when the tests run.
 
 To run cypress

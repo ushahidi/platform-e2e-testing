@@ -21,10 +21,12 @@ Then ('I can create a Category', ()=>{
     cy
     .get('#category-name')
     .type('Automated Category')
+    .should('have.value','Automated Category')
 
 	cy
     .get('#category-description')
     .type('Automated Category Description')
+    .should('have.value','Automated Category Description')
 
 	cy
     .contains('Save')

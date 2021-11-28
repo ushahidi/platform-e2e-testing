@@ -12,10 +12,18 @@ When ('I navigate to Categories page', ()=>{
 
 })
 Then ('I can create a Category', ()=>{
+
+    cy.intercept(/create/).as("createCat");
+
     //open category creation page
     cy
     .get('.button.button-alpha.button-fab')
     .click({force: true})
+
+    //Save button should be disabled
+    cy
+    .contains('Save')
+    .should('be.disabled')
 
     //create category
     cy
@@ -31,4 +39,21 @@ Then ('I can create a Category', ()=>{
 	cy
     .contains('Save')
     .click()
+
+    cy.wait("@createCat").its("response.statusCode").should("be.oneOf", [200, 201, 204]);
+
+    //Dismiss confirmation notification
+    cy
+    .contains('Saved category')
+    .should('exist')
+
+    cy
+    .contains('Dismiss')
+    .click()
+})
+
+Then ('Verify created Category exists', ()=>{
+    cy
+    .contains('Automated Category')
+    .should('exist')
 })

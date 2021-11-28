@@ -57,3 +57,33 @@ Then ('Verify created Category exists', ()=>{
     .contains('Automated Category')
     .should('exist')
 })
+
+Then ('I can delete a Category', ()=>{
+    cy
+    .contains('Automated Category')
+    .click()
+
+    cy
+    .contains('Delete category')
+    .click()
+
+    //check for exact matching text to isolate Delete button and differentiate it from other elements with Delete text
+    cy
+    .contains(/^Delete$/)
+    .click()
+})
+
+Then ('Verify deleted Category does not exist', ()=>{
+    //delete confirmation message
+    cy
+    .contains ('Category deleted')
+    .should('exist')
+
+    cy
+    .contains('Dismiss')
+    .click()
+    
+    cy
+    .contains('Automated Category')
+    .should('not.exist')
+})

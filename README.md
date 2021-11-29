@@ -1,3 +1,4 @@
+[![Tests](https://github.com/ushahidi/platform-e2e-testing/actions/workflows/run-tests.yml/badge.svg?event=push)](https://github.com/ushahidi/platform-e2e-testing/actions/workflows/run-tests.yml)
 # Getting started
 To run the cypress tests, you'll need to install cypress and cucumber. The tests use a BDD approach following a gherkin syntax to direct or dictate how the tests run.
 

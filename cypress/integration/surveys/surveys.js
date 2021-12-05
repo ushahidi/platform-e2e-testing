@@ -68,13 +68,6 @@ Then ('I can create a Survey', ()=> {
 	cy.get('#field-name').type('Automated Date & Time Field')
 	cy.contains('Add & close').click()
 
-	// //Select Field 
-	// cy.contains('Add field').click()
-	// cy.contains('Select').click({force: true})
-	// // cy.get('input').should('have.attr', 'placeholder','Name this field').click().type('Automated Select Field')
-	// cy.get('#field-name').type('Automated Select Field')
-	// cy.contains('Add & close').click()
-
 	// Radio Field
 	cy.contains('Add field').click()
 	cy.contains('Radio Button(s)').click()

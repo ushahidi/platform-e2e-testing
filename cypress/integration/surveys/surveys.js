@@ -3,6 +3,7 @@ import {When, Then} from "cypress-cucumber-preprocessor/steps"
 When ('I navigate to Surveys page',() =>{
 	cy.wait(3000)
 	cy.contains('Settings').click({force: true})
+	cy.wait(3000)
 	cy.contains('Surveys').click()
 })
 
@@ -65,12 +66,6 @@ Then ('I can create a Survey', ()=> {
 	cy.contains('Add field').click()
 	cy.contains('Date & Time').click()
 	cy.get('#field-name').type('Automated Date & Time Field')
-	cy.contains('Add & close').click()
-
-	//Select Field 
-	cy.contains('Add field').click()
-	cy.get('#bootstrap-app > ush-modal-container > div > div.modal-window > modal-content > survey-attribute-create > dl > dt:nth-child(15) > a').click()
-	cy.get('#field-name').type('Automated Select Field')
 	cy.contains('Add & close').click()
 
 	// Radio Field

@@ -5,7 +5,7 @@
 ],
 "viewportWidth": 1280,
 "viewportHeight": 960,
-"videoUploadOnPasses":false
-
+"videoUploadOnPasses":false,
+"defaultCommandTimeout":8000
 }
 

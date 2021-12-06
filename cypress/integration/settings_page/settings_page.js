@@ -7,7 +7,9 @@ When ('I navigate to Settings page', ()=>{
         // cy.contains('Settings').click({force: true})
     })
   Then ('It verifies Settings', ()=>{
-        cy.contains('General').click()
+        cy.location('pathname').should('eq','/settings')
+
+        cy.contains('General').should('be.visible').click()
         cy.wait(3000)
         cy.go('back')
   

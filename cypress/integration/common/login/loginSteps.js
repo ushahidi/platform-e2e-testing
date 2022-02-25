@@ -3,7 +3,7 @@ import {Given, And, Then, When} from "cypress-cucumber-preprocessor/steps"
 
 //for this login spec file to run from another file, it needs to be located in common folder
 Given ('Login to the application',()=>{
-    cy.visit('https://test-deployment.steve-buscemi.ush.zone/views/data')
+    cy.visit(Cypress.env('baseUrl'))
 
 	cy.contains('Log in').click({force: true})
 

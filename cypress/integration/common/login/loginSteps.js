@@ -5,11 +5,11 @@ import {Given, And, Then, When} from "cypress-cucumber-preprocessor/steps"
 Given ('Login to the application',()=>{
     cy.visit(Cypress.env('baseUrl'))
 
-	cy.contains('Log in').click({force: true})
+	cy.get('[data-cy="mb-login-page-button"]').click()
 
-    cy.get('input[id=email]').type(Cypress.env('ush_admin_email'))
-    cy.get('input[id=password]').type(Cypress.env('ush_admin_pwd'))
+    cy.get('[data-cy="login-email-field"]').type(Cypress.env('ush_adminget_email'))
+    cy.get('[data-cy="login-password-field"]').type(Cypress.env('ush_admin_pwd'))
 
-    cy.get('.button-alpha').contains('Log in').click()
+    cy.get('[data-cy="login-complete-button"]').contains('Log in').click()
 //add assertions to confirm user is actually logged in
 })

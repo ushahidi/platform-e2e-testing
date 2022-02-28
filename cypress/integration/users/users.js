@@ -1,9 +1,9 @@
 import {Given, And, Then, When} from "cypress-cucumber-preprocessor/steps"
 
 Given ('I can add a User', ()=>{
-	cy.visit('https://test-deployment.steve-buscemi.ush.zone/views/data')
+	cy.visit(Cypress.env('baseUrl'))
 
-	cy.contains('Sign up').click({force: true})
+	cy.get('[data-cy=mb-signup-page-button]').click()
 
 	cy.get('[placeholder="Display Name"]').type(Cypress.env('ush_user_name'))
 	cy.get('input[id=email]').type(Cypress.env('ush_user_email'))

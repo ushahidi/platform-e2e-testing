@@ -7,7 +7,7 @@ Given ('Login to the application',()=>{
 
 	cy.get('[data-cy="mb-login-page-button"]').click()
 
-    cy.get('[data-cy="login-email-field"]').type(Cypress.env('ush_adminget_email'))
+    cy.get('[data-cy="login-email-field"]').type(Cypress.env('ush_admin_email'))
     cy.get('[data-cy="login-password-field"]').type(Cypress.env('ush_admin_pwd'))
 
     cy.get('[data-cy="login-complete-button"]').contains('Log in').click()

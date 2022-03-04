@@ -2,7 +2,7 @@ import {Given, And, Then, When} from "cypress-cucumber-preprocessor/steps"
 
 When ('I navigate to data view page', ()=>{
 	it('Checks Data View',()=>{
-		cy.wait(8000)//this wait can be done away with if browser(viewport) window is maximized.																																																																																
+		cy.wait(10000)//this wait can be done away with if browser(viewport) window is maximized.																																																																																
 		cy.contains('Data').click({force: true})
 		cy.get('.hide-until-medium > .searchbar > .searchbar-options > .searchbar-options-filter > sort-and-filter-counter > .button-label-d > [translate=""]').contains('Sort & filter')
 		   .click({force: true})

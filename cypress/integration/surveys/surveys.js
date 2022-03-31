@@ -1,9 +1,9 @@
 import {When, Then} from "cypress-cucumber-preprocessor/steps"
 
 When ('I navigate to Surveys page',() =>{
-	cy.wait(3000)
+	cy.wait(10000)
 	cy.contains('Settings').click({force: true})
-	cy.wait(3000)
+	cy.wait(10000)
 	cy.contains('Surveys').click()
 })
 

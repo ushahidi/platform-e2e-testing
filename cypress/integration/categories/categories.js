@@ -6,8 +6,9 @@ When ('I navigate to Categories page', ()=>{
     .should('be.visible').click()
 
     cy
+    .scrollTo('bottom')
     .contains('Categories',{timeout: 5000})
-    .should('be.visible').click()
+    .click()
 })
 
 Then ('I can create a Category', ()=>{

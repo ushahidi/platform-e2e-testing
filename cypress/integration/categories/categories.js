@@ -39,14 +39,14 @@ Then ('I can create a Category', ()=>{
     .click()
 
 
-    //Dismiss confirmation notification
-    cy
-    .contains('Saved category')
-    .should('exist')
+    // //Dismiss confirmation notification
+    // cy
+    // .contains('Saved category')
+    // .should('exist')
 
-    cy
-    .contains('Dismiss')
-    .click()
+    // cy
+    // .contains('Dismiss')
+    // .click()
 })
 
 Then ('Verify created Category exists', ()=>{
@@ -56,9 +56,10 @@ Then ('Verify created Category exists', ()=>{
 })
 
 Then ('I can delete a Category', ()=>{
+    cy.wait(2000)
     cy
     .contains('Automated Category')
-    .click()
+    .click({force:true})
 
     cy
     .contains('Delete category')
@@ -76,9 +77,9 @@ Then ('I can delete a Category', ()=>{
      .contains ('Category deleted')
      .should('exist')
 
-     cy
-     .contains('Dismiss')
-     .click()
+    //  cy
+    //  .contains('Dismiss')
+    //  .click()
     
      cy
      .contains('Automated Category')

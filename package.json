@@ -6,10 +6,10 @@
   "scripts": {
     "cy:open": "cypress open"
   },
-  "author": "",
+  "author": "walter@ushahidi.com",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^7.7.0",
+    "cypress": "^9.6.0",
     "cypress-cucumber-preprocessor": "^4.3.0"
   },
   "cypress-cucumber-preprocessor": {

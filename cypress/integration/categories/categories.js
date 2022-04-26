@@ -9,6 +9,7 @@ When ('I navigate to Categories page', ()=>{
     .scrollTo('bottom')
     .contains('Categories',{timeout: 5000})
     .click()
+
 })
 
 Then ('I can create a Category', ()=>{
@@ -80,6 +81,7 @@ Then ('I can delete a Category', ()=>{
     //  cy
     //  .contains('Dismiss')
     //  .click()
+
     
      cy
      .contains('Automated Category')

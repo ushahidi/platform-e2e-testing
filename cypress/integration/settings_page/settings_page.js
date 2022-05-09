@@ -48,9 +48,4 @@ When ('I navigate to Settings page', ()=>{
         cy.contains('Webhooks').click()
         cy.wait(3000)
         cy.go('back')
-  
-        cy.contains('Plans').click()
-        cy.wait(3000)
-        cy.go('back')
-  
       })

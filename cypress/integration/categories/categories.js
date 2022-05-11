@@ -2,12 +2,12 @@ import {Then, When} from "cypress-cucumber-preprocessor/steps"
 
 When ('I navigate to Categories page', ()=>{
     cy  
-    .contains('Settings',{timeout: 5000})
+    .contains('Settings',{timeout: 10000})
     .should('be.visible').click()
 
     cy
     .scrollTo('bottom')
-    .contains('Categories',{timeout: 5000})
+    .contains('Categories',{timeout: 10000})
     .click()
 
 })

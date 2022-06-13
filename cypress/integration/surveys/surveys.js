@@ -19,47 +19,57 @@ Then ('I can create a Survey', ()=> {
 	cy.get('#survey-build-post > .listing > :nth-child(2) > .listing-item-primary > .listing-item-title').click()
 	cy.get('#field-name').type('Automated Title')
 	cy.contains('Add & close').click()
+	cy.get('#survey-build-post > .listing > :nth-child(2)').contains('TitleAutomated Title')
+
 
 	//description field
 	cy.get('#survey-build-post > .listing > :nth-child(3) > .listing-item-primary > .listing-item-title').click()
 	cy.get('#field-name').type('Automated Description')
 	cy.contains('Add & close').click()
+	cy.get('#survey-build-post > .listing > :nth-child(3)').contains('Automated Description')
+
 
 	//short text field
 	cy.contains('Add field').click()
 	cy.contains('Short text').click()
 	cy.get('#field-name').type('Automated Short Text Field')
 	cy.contains('Add & close').click()
+	cy.get('#survey-build-post > .listing > :nth-child(4)').contains('Automated Short Text Field')
 
 	//long text field
 	cy.contains('Add field').click()
 	cy.contains('Long text').click()
 	cy.get('#field-name').type('Automated Long Text Field')
 	cy.contains('Add & close').click()
+	cy.get('#survey-build-post > .listing > :nth-child(5)').contains('Automated Long Text Field')
 
 	//number(decimal) field
 	cy.contains('Add field').click()
 	cy.contains('Number (Decimal)').click()
 	cy.get('#field-name').type('Automated Decimal Number Field')
 	cy.contains('Add & close').click()
+	cy.get('#survey-build-post > .listing > :nth-child(6)').contains('Automated Decimal Number Field')
 
 	//number(integer field)
 	cy.contains('Add field').click()
 	cy.contains('Number (Integer)').click()
 	cy.get('#field-name').type('Automated Number Integer Field')
 	cy.contains('Add & close').click()
+	cy.get('#survey-build-post > .listing > :nth-child(7)').contains('Automated Number Integer Field')
 
 	//Location field
 	cy.contains('Add field').click()
 	cy.contains('Location').click()
 	cy.get('#field-name').type('Automated Location Field')
 	cy.contains('Add & close').click()
+	cy.get('#survey-build-post > .listing > :nth-child(8)').contains('Automated Location Field')
 
 	//Date Field
 	cy.contains('Add field').click()
 	cy.contains('Date').click()
 	cy.get('#field-name').type('Automated Date Field')
 	cy.contains('Add & close').click()
+	cy.get('#survey-build-post > .listing > :nth-child(9)').contains('Automated Date Field')
 
 
 	//Date & Time Field
@@ -67,17 +77,20 @@ Then ('I can create a Survey', ()=> {
 	cy.contains('Date & Time').click()
 	cy.get('#field-name').type('Automated Date & Time Field')
 	cy.contains('Add & close').click()
+	cy.get('#survey-build-post > .listing > :nth-child(10)').contains('Automated Date & Time Field')
 
 	// Radio Field
 	cy.contains('Add field').click()
 	cy.contains('Radio Button(s)').click()
 	cy.get('#field-name').type('Automated Radio Buttons Field')
-
 	
 	cy.get('.button-secondary').click() //click Add button to add radio field
 	cy.get('[placeholder="Option 1"]').type('Radio 1') //puts a value in the radio field
 
 	cy.contains('Add & close').click()
+	cy.get('#survey-build-post > .listing > :nth-child(11)').contains('Automated Radio Buttons Field')
+
+	
 
 	//Checkbox Field
 	cy.contains('Add field').click()
@@ -88,30 +101,40 @@ Then ('I can create a Survey', ()=> {
 	cy.get('[placeholder="Option 1"]').type('Radio 1') //puts a value in the radio field
 
 	cy.contains('Add & close').click()
+	cy.get('#survey-build-post > .listing > :nth-child(12)').contains('Automated Checkboxes Field')
 
 	//Related Post Field
 	cy.contains('Add field').click()
 	cy.contains('Related Post').click()
 	cy.get('#field-name').type('Automated Related Post Field')
 	cy.contains('Add & close').click()
+	cy.get('#survey-build-post > .listing > :nth-child(13)').contains('Automated Related Post Field')
+
 
 	//Image Field
 	cy.contains('Add field').click()
 	cy.contains('Image').click()
 	cy.get('#field-name').type('Automated Image Field')
 	cy.contains('Add & close').click()
+	cy.get('#survey-build-post > .listing > :nth-child(14)').contains('Automated Image Field')
+
 
 	//Embed Video
 	cy.contains('Add field').click()
 	cy.contains('Embed video').click()
 	cy.get('#field-name').type('Automated Embeded Video Field')
 	cy.contains('Add & close').click()
+	cy.get('#survey-build-post > .listing > :nth-child(15)').contains('Automated Embeded Video Field')
+
 
 	//Categories
 	cy.contains('Add field').click()
 	cy.contains('Categories').click()
 	cy.get('#field-name').type('Automated Categories Field')
 	cy.contains('Add & close').click()
+	cy.get('#survey-build-post > .listing > :nth-child(16)').contains('Automated Categories Field')
+
+	
 
 
 	//Tasks

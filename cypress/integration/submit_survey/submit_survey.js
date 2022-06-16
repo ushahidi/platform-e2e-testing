@@ -43,4 +43,7 @@ Then ('I submit a response to a Survey', ()=> {
     //veriify the date field has that day's date
     cy.get('#values_2376').should('have.value',dayjs().format('YYYY-MM-DD'))
 
+    //submit survey response
+    cy.get('.toolbar > .button-group > [type="submit"]').click()
+
 })

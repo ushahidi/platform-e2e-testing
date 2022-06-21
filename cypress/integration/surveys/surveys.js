@@ -165,3 +165,13 @@ Then ('I can create a Survey', ()=> {
 	cy.contains('Save').click()
 
 })
+
+Then ('I can delete a Survey', ()=>{
+	cy.get(':nth-child(17) > .dropdown > .button-beta').click()
+	cy.get(':nth-child(17) > .dropdown > .dropdown-menu > :nth-child(2) > a > .label').click()
+	cy.get('input[name="survey"]').type('Automated Survey')
+	cy.contains('Delete this survey').click()
+
+	//confirm survey doesn't exist anymore
+
+})

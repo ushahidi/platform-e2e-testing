@@ -7,7 +7,7 @@ Given ('I launch application as unauthorised user', ()=>{
 
 When ('I navigate to Survey', ()=> {
     cy.get('.fab > .button-alpha > .iconic > use').click()
-    cy.get('.mainsheet-window').contains('Automated Survey').eq(0).click()
+    cy.get('.mainsheet-window').contains('Automated Survey - Do Not Delete').click()
 })
 
 

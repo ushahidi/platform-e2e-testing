@@ -30,6 +30,7 @@ Then ('I submit a response to a Survey', ()=> {
     cy.get('#values2509').type(1.1)
     cy.get('#values2510').type(1)
 
+
     //search for Kenya on map and click on first result, and verify coordinates match selected result
     cy.get('.tooltip > .ng-valid').type('Kenya')
     cy.wait(3000)
@@ -42,6 +43,7 @@ Then ('I submit a response to a Survey', ()=> {
 
     //veriify the date field has that day's date
     cy.get('#values_2512').should('have.value',dayjs().format('YYYY-MM-DD'))
+
 
     //submit survey response
     cy.get('.toolbar > .button-group > [type="submit"]').click()

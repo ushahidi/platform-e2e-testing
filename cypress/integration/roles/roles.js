@@ -29,3 +29,17 @@ Then ('I can create a new role', ()=>{
 Then ('I can verify created role exists', ()=>{
   cy.contains('Automated Role').should('be.visible')
 })
+
+Then ('I can delete created role', ()=>{
+  cy.contains('Automated Role').click()
+  cy.get('.button-destructive').click()
+  
+  //click delete on confirmation modal to complete deletion
+  cy.get('.modal-window')
+    .should('be.visible')
+    .contains('Delete')
+    .click()
+  
+  //confirm deleted modal is not on list
+  cy.contains('Automated Role').should('not.be.visible')
+})

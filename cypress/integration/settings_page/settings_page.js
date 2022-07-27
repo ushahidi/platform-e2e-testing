@@ -3,7 +3,7 @@ import { Then, When } from "cypress-cucumber-preprocessor/steps"
 When ('I navigate to Settings page', ()=>{
   
         // cy.wait(5000) //wait for link to be visible
-        cy.contains('Settings',{timeout: 5000}).should('be.visible').click()
+        cy.contains('Settings',{timeout: 10000}).should('be.visible').click()
         // cy.contains('Settings').click({force: true})
     })
   Then ('It verifies Settings', ()=>{

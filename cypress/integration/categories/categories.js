@@ -77,11 +77,6 @@ Then ('I can delete a Category', ()=>{
      cy
      .contains ('Category deleted')
      .should('exist')
-
-    //  cy
-    //  .contains('Dismiss')
-    //  .click()
-
     
      cy
      .contains('Automated Category')

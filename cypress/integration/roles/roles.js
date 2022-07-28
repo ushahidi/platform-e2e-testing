@@ -1,7 +1,7 @@
 import {Then, When} from "cypress-cucumber-preprocessor/steps"
 
 When ('I navigate to Roles page', () => {
-        cy.contains('Settings',{timeout: 5000}).should('be.visible').click()
+        cy.contains('Settings').should('be.visible').click()
         cy.contains('Roles').should('be.visible').click()
 }) 
 Then ('I can create a new role', ()=>{

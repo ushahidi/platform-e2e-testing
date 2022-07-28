@@ -13,11 +13,9 @@ Given ('I can add a User', ()=>{
 	cy.get('[type="submit"]').eq(1).click({force: true})
 })
 When ('I navigate to Users page', ()=>{
-	cy.contains('Settings',{timeout: 8000}).should('be.visible').click()
+	cy.contains('Settings',{timeout: 10000}).should('be.visible').click()
 
-	cy.wait(3000)
-
-	cy.contains('Users').click()
+	cy.contains('Users', {timeout: 10000}).click()
 
 })
 Then ('I can create a Member User',()=>{

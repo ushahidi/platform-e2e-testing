@@ -1,14 +1,19 @@
 import {Given, And, Then, When} from "cypress-cucumber-preprocessor/steps"
 
 When ('I navigate to data view page', ()=>{
-		cy.wait(5000)//this wait can be done away with if browser(viewport) window is maximized.																																																																																
-		cy.contains('Data').click({force: true})
+		//verify login modal is dismissed before proceeding with tests
+		cy.get('.modal-window')
+		  .should('not.be.visible')																																																																																
+		cy.contains('Data')
+		  .click()
+		cy.url()
+		  .should('include','/views/data')
 		cy.get('.hide-until-medium > .searchbar > .searchbar-options > .searchbar-options-filter > sort-and-filter-counter > .button-label-d > [translate=""]').contains('Sort & filter')
 		   .click({force: true})
 	})
+	
 Then ('I should see data view information', ()=>{
 		//launch sort & filter drop-down and sort posts to show Under Review only
-		cy.wait(5000) //we have this to wait for login modal to get dismissed
 		cy.contains('Sort & filter').click({force: true})
 		cy.contains('Published').click({force: true})
 	

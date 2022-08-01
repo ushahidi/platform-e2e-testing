@@ -11,5 +11,15 @@ Given ('Login to the application',()=>{
     cy.get('[data-cy="login-password-field"]').type(Cypress.env('ush_admin_pwd'))
 
     cy.get('[data-cy="login-complete-button"]').contains('Log in').click()
-//add assertions to confirm user is actually logged in
+
+    //verify user is logged in
+    //confirm login modal is dismissed
+    cy.get('.modal-window')
+      .should('not.be.visible')
+    
+    cy.get('[data-cy="mb-signup-page-button"]')
+      .should('not.be.visible')
+
+    cy.get('[data-cy="mb-logout-button"]')
+      .should('be.visible')
 })

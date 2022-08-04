@@ -18,8 +18,20 @@ Given ('Login to the application',()=>{
         .contains('Log in')
         .click()
 
+    //verify user is logged in
+    //confirm login modal is dismissed
+    cy.get('.modal-window')
+      .should('not.be.visible')
+    
+    cy.get('[data-cy="mb-signup-page-button"]')
+      .should('not.be.visible')
+
+    cy.get('[data-cy="mb-logout-button"]')
+      .should('be.visible')
+      
     //add assertions to confirm user is actually logged in
     //verify from url that user is in views page
     cy.url()
         .should('contain','/views/map')
+
 })

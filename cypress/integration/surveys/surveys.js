@@ -1,16 +1,14 @@
 import {When, Then} from "cypress-cucumber-preprocessor/steps"
 
 When ('I navigate to Surveys page',() =>{
-	cy.wait(10000)
-	cy.contains('Settings').click({force: true})
-	cy.wait(10000)
+	cy.get('[data-cy="mb-settings-button"]').click()
 	cy.contains('Surveys').click()
 })
 
 Then ('I can create a Survey', ()=> {
 	cy.contains('New Survey').click()
 
-	cy.get('#survey_name').type('Automated Survey')
+	cy.get('#survey_name').type('Automated Survey - With Translation')
 	cy.get('#survey_description').type('Automated Description')
 
 
@@ -161,7 +159,122 @@ Then ('I can create a Survey', ()=> {
 	cy.get('#field-name').type('Automated Long Text Field')
 	cy.contains('Add & close').click()
 
-	//click Save to save survey and complete survey creation process
+	// click Save to save survey and complete survey creation process
 	cy.contains('Save').click()
 
+})
+
+And ("I can add a translation", ()=>{
+	//open survey from surveys list
+	cy.wait(10000)
+	cy.scrollTo('bottom')
+    cy.contains('Automated Survey - With Translation').click()
+
+	cy.contains('Add translation').should('be.visible')
+	cy.wait(1000)
+	
+	//add translation
+	cy.contains('Add translation').click()
+	cy.get('.modal-window').should('be.visible')
+	cy.get('[data-cy=custom-select]').select('Swahili') //select language
+	cy.get('.button.modal-trigger').eq(1).contains('Add').click({force: true})
+
+	//add translation survey name and description
+	cy.get('.required > form.ng-pristine > .form-field').type('Automated Survey - Swahili Name')
+	cy.get('survey-translation-editor > :nth-child(1) > :nth-child(3) > .ng-pristine').type('Automated Description - Swahili Desc')
+
+	//open title modal
+	cy.get(':nth-child(1) > .survey-details > .listing > :nth-child(2) > .listing-item-primary > .listing-item-title').click()
+	
+	//add title 
+	cy.get("input[placeholder=\"Write your translation here\"]").eq(2).type('Automated Title - Swahili')
+	cy.contains("Ongeza & funga").click()
+
+	//open description modal
+	cy.get(':nth-child(1) > .survey-details > .listing > :nth-child(3) > .listing-item-primary > .listing-item-title').click()
+	//add description translation 
+	cy.get("input[placeholder=\"Write your translation here\"]").eq(2).type('Automated Description - Swahili')
+	cy.contains("Ongeza & funga").click()
+
+	//open short text modal
+	cy.get(':nth-child(1) > .survey-details > .listing > :nth-child(4) > .listing-item-primary > .listing-item-title').click()
+	cy.get("input[placeholder=\"Write your translation here\"]").eq(2).type('Automated Short Text - Swahili')
+	cy.contains("Ongeza & funga").click()
+
+	//open long text modal
+	cy.get(':nth-child(1) > .survey-details > .listing > :nth-child(5) > .listing-item-primary > .listing-item-title').click()
+	cy.get("input[placeholder=\"Write your translation here\"]").eq(2).type('Automated Long Text - Swahili')
+	cy.contains("Ongeza & funga").click()
+
+	//open decimal modal
+	cy.get(':nth-child(1) > .survey-details > .listing > :nth-child(6) > .listing-item-primary > .listing-item-title').click()
+	cy.get("input[placeholder=\"Write your translation here\"]").eq(2).type('Automated Decimal - Swahili')
+	cy.contains("Ongeza & funga").click()
+
+	//open number modal
+	cy.get(':nth-child(1) > .survey-details > .listing > :nth-child(7) > .listing-item-primary > .listing-item-title').click()
+	cy.get("input[placeholder=\"Write your translation here\"]").eq(2).type('Automated Number - Swahili')
+	cy.contains("Ongeza & funga").click()
+
+
+	//open location modal
+	cy.get(':nth-child(1) > .survey-details > .listing > :nth-child(8) > .listing-item-primary > .listing-item-title').click()
+	cy.get("input[placeholder=\"Write your translation here\"]").eq(2).type('Automated Location - Swahili')
+	cy.contains("Ongeza & funga").click()
+
+	//open date modal
+	cy.get(':nth-child(1) > .survey-details > .listing > :nth-child(9) > .listing-item-primary > .listing-item-title').click()
+	cy.get("input[placeholder=\"Write your translation here\"]").eq(2).type('Automated Date - Swahili')
+	cy.contains("Ongeza & funga").click()
+
+	//open date and time modal
+	cy.get(':nth-child(1) > .survey-details > .listing > :nth-child(10) > .listing-item-primary > .listing-item-title').click()
+	cy.get("input[placeholder=\"Write your translation here\"]").eq(2).type('Automated Date and Time - Swahili')
+	cy.contains("Ongeza & funga").click()
+
+
+	//open radio buttons modal
+	cy.get(':nth-child(1) > .survey-details > .listing > :nth-child(11) > .listing-item-primary > .listing-item-title').click()
+	cy.get("input[placeholder=\"Write your translation here\"]").eq(2).type('Automated Radio - Swahili')
+	cy.contains("Ongeza & funga").click()
+
+
+	//open checkboxes modal
+	cy.get(':nth-child(1) > .survey-details > .listing > :nth-child(12) > .listing-item-primary > .listing-item-title').click()
+	cy.get("input[placeholder=\"Write your translation here\"]").eq(2).type('Automated Checkboxes - Swahili')
+	cy.contains("Ongeza & funga").click()
+
+
+	//open related post modal
+	cy.get(':nth-child(1) > .survey-details > .listing > :nth-child(13) > .listing-item-primary > .listing-item-title').click()
+	cy.get("input[placeholder=\"Write your translation here\"]").eq(2).type('Automated Related Post - Swahili')
+	cy.contains("Ongeza & funga").click()
+
+
+	//open image modal
+	cy.get(':nth-child(1) > .survey-details > .listing > :nth-child(14) > .listing-item-primary > .listing-item-title').click()
+	cy.get("input[placeholder=\"Write your translation here\"]").eq(2).type('Automated Image - Swahili')
+	cy.contains("Ongeza & funga").click()
+
+
+	//open embed video modal
+	cy.get(':nth-child(1) > .survey-details > .listing > :nth-child(15) > .listing-item-primary > .listing-item-title').click()
+	cy.get("input[placeholder=\"Write your translation here\"]").eq(2).type('Automated Embed Videos - Swahili')
+	cy.contains("Ongeza & funga").click()
+
+	//open categories video modal
+	cy.get(':nth-child(1) > .survey-details > .listing > :nth-child(16) > .listing-item-primary > .listing-item-title').click()
+	cy.get("input[placeholder=\"Write your translation here\"]").eq(2).type('Automated Categories - Swahili')
+	cy.contains("Ongeza & funga").click()
+
+
+	//task fields
+	cy.get('[ng-show="survey.tasks.length > 1"] > [ng-repeat="task in survey.tasks | limitTo: 1 - survey.tasks.length"] > :nth-child(1) > .ng-pristine')
+	  .type("Automated Task - Swahili")
+
+	cy.get('[ng-repeat="task in survey.tasks | limitTo: 1 - survey.tasks.length"] > :nth-child(2) > .ng-pristine')
+		.type("Automated Task Description - Swahili")
+
+	//save changes
+	cy.contains('Save').click()
 })

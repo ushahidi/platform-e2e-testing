@@ -30,7 +30,6 @@ jobs:
       uses: cypress-io/github-action@v4
 
       with:
-        working-directory: platform-e2e-testing
         browser: "${{matrix.browser}}"
         install-command: npm install
         record: true

@@ -9,7 +9,7 @@
   "author": "walter@ushahidi.com",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^9.6.0",
+    "cypress": "^10.10.0",
     "cypress-cucumber-preprocessor": "^4.3.0"
   },
   "cypress-cucumber-preprocessor": {

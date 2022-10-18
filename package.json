@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "start": "cypress run"
   },
   "author": "walter@ushahidi.com",
   "license": "ISC",

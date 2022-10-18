@@ -34,7 +34,6 @@ jobs:
         install-command: npm install
         record: true
         parallel: true
-        build: npm run build
         start: npm start
         
       env:

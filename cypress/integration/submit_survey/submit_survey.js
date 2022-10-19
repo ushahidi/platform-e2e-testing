@@ -32,8 +32,8 @@ Then ('I submit a response to a Survey', ()=> {
 
 
     //search for Kenya on map and click on first result, and verify coordinates match selected result
-    cy.get('.tooltip > .ng-valid').type('Kenya')
-    cy.wait(3000)
+    cy.get('.tooltip > .ng-valid').type('Kenya{enter}')
+    cy.wait(4000)
     cy.get(':nth-child(2) > .list-item').click()
     cy.get('#lat').should('have.value',1.4419683)
     cy.get('#long').should('have.value',38.4313975)
